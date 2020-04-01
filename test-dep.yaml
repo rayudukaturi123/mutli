@@ -8,7 +8,8 @@ metadata:
 spec:
  replicas: 2
  selector:
-     app: httpd2
+     matchLabels:
+      app: httpd2
  template:
      metadata:
         labels:
