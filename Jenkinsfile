@@ -12,7 +12,7 @@ pipeline {
         stage ('Bulding docker docker image') {
             steps {
                 echo "build docker image"
-                sh 'docker build -t httpd:1 .'
+                sh 'docker build -t httpd .'
             }
         }
         stage ('Uploading to docker hub') {
@@ -24,9 +24,9 @@ pipeline {
             }
         }
 
-        stage ('deploying to EKS') {
+        stage ('deploying to GKE') {
            steps {
-                echo "deploying imges to EKS"
+                echo "deploying imges to GKE"
                 sh 'rm -rf /var/lib/jenkins/.kube && aws eks update-kubeconfig --name myeks'
                 sh 'kubectl apply -f test-dep.yaml'
                 sh 'kubectl apply -f test-svc.yaml'
