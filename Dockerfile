@@ -14,4 +14,6 @@ WORKDIR /var/www/html
 
 EXPOSE 80
 
+CMD /usr/bin/apache2ctl -D FORGROUND
+
 
