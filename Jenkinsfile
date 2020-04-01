@@ -12,15 +12,14 @@ pipeline {
         stage ('Bulding docker docker image') {
             steps {
                 echo "build docker image"
-                sh 'docker build -t test:1 .'
+                sh 'docker build -t httpd:1 .'
             }
         }
-        stage ('Uploading to Ecr') {
+        stage ('Uploading to docker hub') {
             steps {
-                echo "uploading to ECR "
-                sh 'aws ecr get-login --no-include-email'
-                sh 'docker tag mytestrepo:1 642975937704.dkr.ecr.ap-northeast-1.amazonaws.com/mytestrepo:1'
-        sh 'docker push 642975937704.dkr.ecr.ap-northeast-1.amazonaws.com/mytestrepo:1'
+                echo "uploading to docker hub "
+                sh 'dokcer login -u saidevops94 -p Sai@809969'
+                sh 'docker push tag httpd saidevops94/repos' 
             }
         }
 
