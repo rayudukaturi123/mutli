@@ -15,8 +15,8 @@ spec:
         labels:
             app: httpd2
      spec:
-             containers:
-                - name: httpd
-                  image: saidevops94/repos:latest
-             ports:
-                - containerPort: 80
+       containers:
+         - name: httpd
+           image: saidevops94/repos:latest
+       ports:
+        - containerPort: 80
