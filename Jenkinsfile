@@ -27,7 +27,6 @@ pipeline {
         stage ('deploying to GKE') {
            steps {
                 echo "deploying imges to GKE"
-                sh 'rm -rf /var/lib/jenkins/.kube && aws eks update-kubeconfig --name myeks'
                 sh 'kubectl apply -f test-dep.yaml'
                 sh 'kubectl apply -f test-svc.yaml'
            }
