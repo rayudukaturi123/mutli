@@ -4,7 +4,7 @@ MAINTAINER sai@pushtii.com
 
 RUN yum update -y
 
-RUN yum install httpd -y
+RUN yum install apache2 -y
 
 ADD test.html /usr/local/apache2/htdocs/test.
 
