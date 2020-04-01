@@ -19,7 +19,8 @@ pipeline {
             steps {
                 echo "uploading to docker hub "
                 sh 'docker login -u saidevops94 -p Sai@809969'
-                sh 'docker push tag httpd saidevops94/repos' 
+                sh 'docker tag httpd saidevops94/repos'
+                sh 'docker push saidevops94/repo '
             }
         }
 
