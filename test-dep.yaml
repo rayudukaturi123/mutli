@@ -18,5 +18,5 @@ template:
              containers:
                 - name: httpd
                   image: saidevops94/repos:latest
-              ports:
+             ports:
                 - containerPort: 80
