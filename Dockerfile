@@ -6,7 +6,7 @@ RUN yum update -y
 
 RUN yum install httpd -y
 
-ADD test.html /var/www/html/test.html
+ADD test.html /usr/local/apache2/htdocs/test.
 
 USER root
 
