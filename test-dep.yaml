@@ -18,5 +18,5 @@ spec:
        containers:
          - name: httpd
            image: saidevops94/repos:latest
-       ports:
-        - containerPort: 80
+           ports:
+           - containerPort: 80
