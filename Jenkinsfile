@@ -30,8 +30,9 @@ pipeline {
                 sh 'docker login -u saidevops94 -p Sai@809969'
                 sh 'docker pull saidevops94/repos:latest'
                 sh 'kubectl apply -f test-dep.yaml'
-                sh 'kubectl apply -f test-svc.yaml'
                 sh 'kubectl set image deployment/httpd-deployment httpd2=saidevops94/repos:latest'
+                sh 'kubectl apply -f test-svc.yaml'
+               
            }
     }  
         
