@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
     name: httpd-deployment
     labels:
-      app: httpd
+      app: httpd2
 spec:
  replicas: 2
  selector:
