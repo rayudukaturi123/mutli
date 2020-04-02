@@ -2,7 +2,6 @@ FROM centos
 
 MAINTAINER sai@pushtii.com
 
-
 RUN yum install httpd -y
 
 COPY index.html /var/www/html/index.html
