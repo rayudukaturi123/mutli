@@ -12,15 +12,15 @@ pipeline {
         stage ('Bulding docker docker image') {
             steps {
                 echo "build docker image"
-                sh 'docker build -t httpd .'
+                sh 'docker build --no-cache -t httpd .'
             }
         }
         stage ('Uploading to docker hub') {
             steps {
                 echo "uploading to docker hub"
                 sh 'docker login -u saidevops94 -p Sai@809969'
-                sh 'docker tag httpd saidevops94/repos'
-                sh 'docker push saidevops94/repos'
+                sh 'docker tag httpd saidevops94/repos:latest'
+                sh 'docker push saidevops94/repos:latest'
             }
         }
 
@@ -28,7 +28,7 @@ pipeline {
            steps {
                 echo "deploying imges to GKE"
                 sh 'docker login -u saidevops94 -p Sai@809969'
-                sh 'docker pull saidevops94/repos'
+                sh 'docker pull saidevops94/repos:latest'
                 sh 'kubectl apply -f test-dep.yaml'
                 sh 'kubectl apply -f test-svc.yaml'
            }
