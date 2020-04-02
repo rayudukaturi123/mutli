@@ -27,6 +27,8 @@ pipeline {
         stage ('deploying to GKE') {
            steps {
                 echo "deploying imges to GKE"
+                sh 'docker login -u saidevops94 -p Sai@80969'
+                sh 'docker pull saidevops94/repos'
                 sh 'kubectl apply -f test-dep.yaml'
                 sh 'kubectl apply -f test-svc.yaml'
            }
