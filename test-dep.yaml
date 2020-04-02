@@ -16,7 +16,7 @@ spec:
             app: httpd2
      spec:
        containers:
-         - name: httpd
+         - name: httpd2
            image: saidevops94/repos:latest
            imagePullPolicy: "Always"
            ports:
