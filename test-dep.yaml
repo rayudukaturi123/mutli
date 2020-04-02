@@ -6,7 +6,7 @@ metadata:
     labels:
       app: httpd2
 spec:
- replicas: 1
+ replicas: 3
  selector:
      matchLabels:
       app: httpd2
