@@ -12,12 +12,14 @@ pipeline {
         stage ('Bulding docker docker image') {
             steps {
                 echo "build docker image"
+                sh 'docker rmi -f $(docker images --filter "dangling=true" -q --no-trunc)'
+                sh 'docker rmi -f $(docker images -a -q)'
                 sh 'docker build --no-cache -t saidevops94/repos .'
             }
         }
         stage ('Uploading to docker hub') {
             steps {
-                echo "uploading to docker hub"
+                echo "uploading to docker hub" 
                 sh 'docker login -u saidevops94 -p Sai@809969'
                 sh 'docker push saidevops94/repos:latest'
             }
