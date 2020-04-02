@@ -12,8 +12,6 @@ pipeline {
         stage ('Bulding docker docker image') {
             steps {
                 echo "build docker image"
-                sh 'docker rmi -f $(docker images --filter "dangling=true" -q --no-trunc)'
-                sh 'docker rmi -f $(docker images -a -q)'
                 sh 'docker build --no-cache -t saidevops94/repos .'
             }
         }
