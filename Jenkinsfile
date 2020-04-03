@@ -30,7 +30,6 @@ pipeline {
                 sh 'kubectl set image deployment/httpd-deployment httpd2=saidevops94/repos:latest'
                 sh 'kubectl apply -f test-svc.yaml'
                 sh 'kubectl rollout restart deployment/httpd-deployment'
-                sh 'docker rmi -f $(docker images --filter "dangling=true" -q --no-trunc)'
                
            }
     }  
