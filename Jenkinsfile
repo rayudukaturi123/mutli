@@ -8,3 +8,7 @@ pipeline {
          git 'https://github.com/umahari/testing.git'
             }
         }
+}
+    
+}    
+    
